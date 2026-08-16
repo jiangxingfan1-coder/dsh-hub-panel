@@ -1,0 +1,6 @@
+# dsh-hub-panel bundle patch: one insert registering the dual-face plugin.
+# The row id must match the node half's exported cordis `name`.
+- insert:
+    - id: hub-panel
+      name: 'dsh-hub-panel'
+      config: {}

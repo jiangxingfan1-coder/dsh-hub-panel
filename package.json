@@ -1,0 +1,39 @@
+{
+  "name": "dsh-hub-panel",
+  "version": "0.1.0",
+  "description": "dsh-hub ecosystem browser inside DeepSeek Harness Settings: search plugins/composes/apps with trust tiers; install stays a human decision.",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime"
+      ],
+      "platform": "web",
+      "immediately": true
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "*",
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.24.2"
+  }
+}
